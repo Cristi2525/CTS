@@ -8,10 +8,6 @@ public class SumCalculation implements Calculation<Long> {
 
     @Override
     public Long calculate(List<Integer> list) {
-        long sum = 0;
-        for (int x : list) {
-            sum += x;
-        }
-        return sum;
+        return list.stream().mapToLong(Integer::longValue).sum();
     }
 }

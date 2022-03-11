@@ -8,15 +8,17 @@ import java.util.Scanner;
 
 
 public class ConsoleReader implements ValuesReader {
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     @Override
     public List<Integer> readValues(int size) {
         List<Integer> list = new ArrayList<>();
+
         for (int i = 0; i < size; i++) {
             int value = scanner.nextInt();
             list.add(value);
         }
+
         return list;
     }
 }
